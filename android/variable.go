@@ -114,6 +114,26 @@ type variableProperties struct {
 			Static_libs  []string
 			Srcs         []string
 		}
+
+		Additional_gralloc_10_usage_bits struct {
+			Cppflags []string
+		}
+
+		Has_legacy_camera_hal1 struct {
+			Cflags []string
+		}
+
+		Needs_text_relocations struct {
+			Cppflags []string
+		}
+
+		Target_shim_libs struct {
+			Cppflags []string
+		}
+
+		Uses_qcom_bsp_legacy struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -230,6 +250,12 @@ type productVariables struct {
 	PgoAdditionalProfileDirs []string `json:",omitempty"`
 
 	VendorVars map[string]map[string]string `json:",omitempty"`
+
+	Additional_gralloc_10_usage_bits  *string `json:",omitempty"`
+	Has_legacy_camera_hal1 *bool `json:",omitempty"`
+	Needs_text_relocations *bool `json:",omitempty"`
+	Target_shim_libs *string `json:",omitempty"`
+	Uses_qcom_bsp_legacy *bool `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
